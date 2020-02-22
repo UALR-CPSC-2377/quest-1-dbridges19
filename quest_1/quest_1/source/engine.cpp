@@ -15,6 +15,18 @@ loadBlockData (
     Object p_objects[],
     const GUI& p_gui
 ) {
+	//Opens input Filestream
+	std::ifstream inputFile(p_gameFile);
+
+	//Check if file is good, open the file
+	if (inputFile.good()) {
+		//push items onto array
+		int current_number = 0; 
+		int iterator = 0;
+		while (inputFile >> current_number) {
+			p_objects[iterator].type = current_number;
+		}
+	}
     /*
         -- loadBlockData   --
         Parameters:
